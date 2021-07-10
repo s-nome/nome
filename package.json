@@ -1,0 +1,14 @@
+{
+  "name": "nome",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "All-in-one workspace.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npm run serve --workspace=client",
+    "test:unit": "npm run test:unit --workspace=client",
+    "storybook": "npm run storybook --workspace=client"
+  }
+}
