@@ -9,6 +9,8 @@
   "scripts": {
     "serve": "npm run serve --workspace=client",
     "test:unit": "npm run test:unit --workspace=client",
-    "storybook": "npm run storybook --workspace=client"
+    "storybook": "npm run storybook --workspace=client",
+
+    "dev": "npm run dev --workspace=server"
   }
 }
