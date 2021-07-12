@@ -7,10 +7,19 @@
   "description": "All-in-one workspace.",
   "main": "index.js",
   "scripts": {
-    "serve": "npm run serve --workspace=client",
-    "test:unit": "npm run test:unit --workspace=client",
-    "storybook": "npm run storybook --workspace=client",
+    "dev": "npm run dev:client & npm run dev:server",
+    "dev:client": "npm run serve --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
 
-    "dev": "npm run dev --workspace=server"
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "npm run build --workspace=client",
+    "build:server": "npm run build --workspace=server",
+
+    "start": "npm run start --workspace=server",
+
+    "heroku-postbuild": "npm run bild && npm run start",
+
+    "test:unit": "npm run test:unit --workspace=client",
+    "storybook": "npm run storybook --workspace=client"
   }
 }
