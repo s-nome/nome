@@ -17,8 +17,6 @@
 
     "start": "npm run start --workspace=server",
 
-    "heroku-postbuild": "npm run bild && npm run start",
-
     "test:unit": "npm run test:unit --workspace=client",
     "storybook": "npm run storybook --workspace=client"
   }
