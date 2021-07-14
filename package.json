@@ -1,6 +1,9 @@
 {
   "name": "nome",
   "private": true,
+  "engines": {
+    "npm": "^7.0.0"
+  },
   "workspaces": [
     "packages/*"
   ],
