@@ -6,30 +6,28 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
 export default {
   name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
   },
   setup: () => {
-    const serverResponse = ref([])
+    const serverResponse = ref([]);
 
     const getserverResponse = async () => {
-      const res = await fetch('/api')
-      serverResponse.value = await res.json()
-    }
+      const res = await fetch("/api");
+      serverResponse.value = await res.json();
+    };
 
-    onMounted(getserverResponse)
+    onMounted(getserverResponse);
 
     return {
-      serverResponse
-    }
+      serverResponse,
+    };
   },
-  mounted () {
-    
-  }
+  mounted() {},
 };
 </script>
 
