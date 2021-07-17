@@ -19,7 +19,8 @@
     "heroku-postbuild": "npm run build",
     "start": "npm run start --workspace=server",
     "test:unit": "npm run test:unit --workspace=client",
-    "storybook": "npm run storybook --workspace=client"
+    "storybook": "npm run storybook --workspace=client",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",

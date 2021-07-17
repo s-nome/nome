@@ -4,7 +4,6 @@
 開発環境
 ```bash
 $ npm ci # Node.jsのバージョンは.node-versionを参照
-$ npx husky install # gitフックを有効にする
 $ npm run dev # 開発環境を起動(clientとserver両方)
 ```
 
