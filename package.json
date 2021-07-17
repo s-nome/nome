@@ -13,16 +13,17 @@
     "dev": "npm run dev:client & npm run dev:server",
     "dev:client": "npm run serve --workspace=client",
     "dev:server": "npm run dev --workspace=server",
-
     "build": "npm run build:client && npm run build:server",
     "build:client": "npm run build --workspace=client",
     "build:server": "npm run build --workspace=server",
-
     "heroku-postbuild": "npm run build",
-
     "start": "npm run start --workspace=server",
-
     "test:unit": "npm run test:unit --workspace=client",
     "storybook": "npm run storybook --workspace=client"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^7.0.1"
   }
 }
