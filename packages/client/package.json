@@ -53,6 +53,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
+    "Android >= 6",
+    "iOS >= 13",
     "not dead"
   ]
 }
