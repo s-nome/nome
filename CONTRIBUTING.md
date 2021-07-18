@@ -10,7 +10,7 @@ $ npm run dev # 開発環境を起動(clientとserver両方)
 本番環境（仮）
 ```bash
 $ npm run build
-$ npm start # http://localhost:3030/
+$ npm start # http://localhost:5000/
 ```
 
 ## パッケージ管理について
