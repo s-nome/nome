@@ -5,10 +5,10 @@
   </div>
 </template>
 
-<script>
-import { ref, onMounted } from "vue";
+<script lang="ts">
+import { defineComponent, ref, onMounted } from "vue";
 
-export default {
+export default defineComponent({
   name: "HelloWorld",
   props: {
     msg: String,
@@ -27,8 +27,7 @@ export default {
       serverResponse,
     };
   },
-  mounted() {},
-};
+});
 </script>
 
 <style scoped>
