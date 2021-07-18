@@ -6,9 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint": "vue-cli-service lint \"**/*.{js,vue,html,ts,mdx}\"",
+    "lint:style": "stylelint \"**/*.{scss,vue}\"",
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -36,6 +37,12 @@
     "babel-loader": "^8.2.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.20.0",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0",
     "vue-loader": "^16.2.0"

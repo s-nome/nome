@@ -22,5 +22,12 @@ module.exports = {
         jest: true,
       },
     },
+    {
+      files: ["public/index.html"],
+      rules: {
+        "prettier/prettier": "off",
+        "vue/comment-directive": "off",
+      },
+    },
   ],
 };
