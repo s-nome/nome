@@ -6,4 +6,7 @@ module.exports = {
     "stylelint-config-prettier",
     "stylelint-prettier/recommended",
   ],
+  rules: {
+    "at-rule-no-unknown": [true, { ignoreAtRules: ["use", "forward"] }],
+  },
 };

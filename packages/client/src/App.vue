@@ -17,6 +17,12 @@ export default defineComponent({
 });
 </script>
 
-<style>
-@import "./index.css";
+<style lang="scss">
+@use "./index.scss";
+
+.helloworld {
+  h1 {
+    font-style: italic;
+  }
+}
 </style>
