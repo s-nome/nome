@@ -13,6 +13,7 @@ module.exports = {
     plugins: [
       new StyleLintPlugin({
         files: ["**/*.{vue,css,scss}"],
+        fix: true,
       }),
     ],
   },
