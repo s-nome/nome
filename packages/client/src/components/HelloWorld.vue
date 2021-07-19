@@ -6,28 +6,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref, onMounted } from 'vue'
 
 export default defineComponent({
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String,
   },
   setup: () => {
-    const serverResponse = ref([]);
+    const serverResponse = ref([])
 
     const getserverResponse = async () => {
-      const res = await fetch("/api");
-      serverResponse.value = await res.json();
-    };
+      const res = await fetch('/api')
+      serverResponse.value = await res.json()
+    }
 
-    onMounted(getserverResponse);
+    onMounted(getserverResponse)
 
     return {
       serverResponse,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped>
