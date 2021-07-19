@@ -1,3 +1,5 @@
+const StyleLintPlugin = require("stylelint-webpack-plugin");
+
 module.exports = {
   devServer: {
     proxy: {
@@ -6,5 +8,13 @@ module.exports = {
         changeOrigin: true,
       },
     },
+  },
+  configureWebpack: {
+    plugins: [
+      new StyleLintPlugin({
+        files: ["**/*.{vue,css,scss}"],
+        fix: true,
+      }),
+    ],
   },
 };
