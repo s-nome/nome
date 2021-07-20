@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
     '@vue/prettier',
     '@vue/typescript',
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
@@ -31,6 +32,14 @@ module.exports = {
     },
   ],
   rules: {
-    'prettier/prettier': ['error', { singleQuote: true, semi: false }],
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        semi: false,
+        tabWidth: 2,
+        trailingComma: 'es5',
+      },
+    ],
   },
 }
