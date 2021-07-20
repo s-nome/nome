@@ -1,15 +1,7 @@
----
-name: Main
-about: 新機能の追加に使うissueテンプレート
-title: "(Issueと同じtitleを入力してください)"
-assignees: ''
-
----
-
-### 📝 チケットへのリンク
+## 📝 Link to ticket
 
 * https://github.com/kazuhe/nome/issues/
 
-## やったこと
+## 🛠️ What did you do
 
 (このプルリクで何をしたのか？)
