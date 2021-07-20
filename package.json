@@ -20,12 +20,18 @@
     "start": "npm run start --workspace=server",
     "test:unit": "npm run test:unit --workspace=client",
     "storybook": "npm run storybook --workspace=client",
+    "lint": "npm run lint --workspace=client",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^6.8.0",
     "husky": "^7.0.1",
-    "lint-staged": "^11.0.1"
+    "lint-staged": "^11.0.1",
+    "prettier": "^2.2.1",
+    "typescript": "^3.9.10"
   }
 }
