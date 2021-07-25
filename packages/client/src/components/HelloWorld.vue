@@ -1,15 +1,19 @@
 <template>
   <div class="helloworld">
     <h1>{{ msg }}</h1>
-    <p>res: {{ serverResponse }}</p>
+    <base-text size="large" color="light">res: {{ serverResponse }}</base-text>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
+import BaseText from '../components/atoms/BaseText/index.vue'
 
 export default defineComponent({
   name: 'HelloWorld',
+  components: {
+    BaseText,
+  },
   props: {
     msg: String,
   },
