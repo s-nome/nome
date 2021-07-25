@@ -31,6 +31,7 @@ module.exports = {
       },
     },
   ],
+  ignorePatterns: ['*.mdx'],
   rules: {
     'prettier/prettier': [
       'error',
