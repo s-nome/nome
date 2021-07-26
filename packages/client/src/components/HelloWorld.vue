@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
-import BaseText from '../components/atoms/BaseText/index.vue'
+import BaseText from '@/components/atoms/BaseText/index.vue'
 
 export default defineComponent({
   name: 'HelloWorld',
