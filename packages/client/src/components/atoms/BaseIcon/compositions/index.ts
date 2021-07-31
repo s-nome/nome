@@ -20,6 +20,10 @@ type ToggleDisplayOfIconSelectionModal = (
   isShownIconSelectionModal: IsShownIconSelectionModal
 ) => () => void
 
+export const toggleDisplayOfIconSelectionModal: ToggleDisplayOfIconSelectionModal = (
+  isShownIconSelectionModal
+) => () => {}
+
 /**
  * アイコンを設定する関数
  *
@@ -28,6 +32,8 @@ type ToggleDisplayOfIconSelectionModal = (
  */
 type ChangeIcon = (icon: Icon) => (newIcon: string) => void
 
+export const changeIcon: ChangeIcon = (icon) => (newIcon) => {}
+
 type UseIcon = (
   isShownIconSelectionModal: IsShownIconSelectionModal,
   icon: Icon
@@ -35,3 +41,10 @@ type UseIcon = (
   toggleDisplayOfIconSelectionModal: ReturnType<ToggleDisplayOfIconSelectionModal>
   changeIcon: ReturnType<ChangeIcon>
 }
+
+export const useIcon: UseIcon = (isShownIconSelectionModal, icon) => ({
+  toggleDisplayOfIconSelectionModal: toggleDisplayOfIconSelectionModal(
+    isShownIconSelectionModal
+  ),
+  changeIcon: changeIcon(icon),
+})
