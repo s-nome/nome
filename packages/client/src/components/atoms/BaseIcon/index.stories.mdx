@@ -1,10 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 import BaseIcon from './index.vue'
 
-<Meta
-  title="Atoms/BaseIcon"
-  component={BaseIcon}
-/>
+<Meta title="Atoms/BaseIcon" component={BaseIcon} />
 
 export const Template = (args) => ({
   components: { BaseIcon },
@@ -19,7 +16,5 @@ export const Template = (args) => ({
 任意のアイコンを選択し表示する。
 
 <Canvas>
-  <Story name="Default">
-    {Template.bind({})}
-  </Story>
+  <Story name="Default">{Template.bind({})}</Story>
 </Canvas>
