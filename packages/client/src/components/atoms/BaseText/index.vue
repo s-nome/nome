@@ -1,5 +1,5 @@
 <template>
-  <span class="text" :class="[sizeClass, colorClass]" :style="style">
+  <span class="base-text" :class="[sizeClass, colorClass]" :style="style">
     <slot />
   </span>
 </template>
@@ -48,7 +48,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.text {
+.base-text {
   // size
   &.-small {
     font-size: 11px;
