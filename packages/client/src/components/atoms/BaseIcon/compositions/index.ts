@@ -22,7 +22,7 @@ type ToggleDisplayOfIconSelectionModal = (
 
 export const toggleDisplayOfIconSelectionModal: ToggleDisplayOfIconSelectionModal = (
   isShownIconSelectionModal
-) => () => {}
+) => () => (isShownIconSelectionModal.value = !isShownIconSelectionModal.value)
 
 /**
  * アイコンを設定する関数
