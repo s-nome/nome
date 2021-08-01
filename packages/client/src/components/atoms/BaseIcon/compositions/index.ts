@@ -30,7 +30,10 @@ export const toggleDisplayOfIconSelectionModal: ToggleDisplayOfIconSelectionModa
  * @param icon アイコン
  * @returns アイコンを設定するカリー化関数
  */
-type ChangeIcon = (icon: Icon) => (newIcon: string) => void
+type ChangeIcon = (
+  icon: Icon,
+  toggleDisplayOfIconSelectionModal: ReturnType<ToggleDisplayOfIconSelectionModal>
+) => (newIcon: string) => void
 
 export const changeIcon: ChangeIcon = (icon) => (newIcon) => {}
 
@@ -46,5 +49,8 @@ export const useIcon: UseIcon = (isShownIconSelectionModal, icon) => ({
   toggleDisplayOfIconSelectionModal: toggleDisplayOfIconSelectionModal(
     isShownIconSelectionModal
   ),
-  changeIcon: changeIcon(icon),
+  changeIcon: changeIcon(
+    icon,
+    toggleDisplayOfIconSelectionModal(isShownIconSelectionModal)
+  ),
 })
