@@ -18,7 +18,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@use "./index.scss";
+@use "./styles/reset.scss";
 
 .helloworld {
   h1 {
