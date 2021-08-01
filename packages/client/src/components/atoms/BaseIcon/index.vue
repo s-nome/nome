@@ -41,6 +41,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .base-icon {
+  position: relative;
+
   .icon {
     transition: all 0.1s ease-in 0s;
     cursor: pointer;
@@ -66,7 +68,7 @@ export default defineComponent({
     height: 268px;
     border-radius: 3px;
     background: white;
-    position: relative;
+    position: absolute;
     box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
       rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
   }
