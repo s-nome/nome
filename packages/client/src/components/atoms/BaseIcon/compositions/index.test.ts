@@ -8,7 +8,6 @@ describe('toggleDisplayOfIconSelectionModal', () => {
       isShownIconSelectionModal
     )
     testTarget()
-
     expect(isShownIconSelectionModal.value).toBe(false)
   })
   test('アイコン選択画面が「表示されていない」場合は関数の実行によって表示されること', () => {
@@ -17,14 +16,23 @@ describe('toggleDisplayOfIconSelectionModal', () => {
       isShownIconSelectionModal
     )
     testTarget()
-
     expect(isShownIconSelectionModal.value).toBe(true)
   })
 })
 
 describe('changeIcon', () => {
-  test.todo('iconが既存のアイコンから新しいアイコンに変更されること')
-  test.todo(
-    'toggleDisplayOfIconSelectionModalがコールされて、アイコン選択画面が非表示になること'
-  )
+  const icon = ref('🐶')
+  const newIcon = '🐱'
+  const toggleDisplayOfIconSelectionModalMock = jest.fn()
+  beforeEach(() => {
+    toggleDisplayOfIconSelectionModalMock.mockClear()
+    const testTarget = changeIcon(icon, toggleDisplayOfIconSelectionModalMock)
+    testTarget(newIcon)
+  })
+  test('iconが既存のアイコンから新しいアイコンに変更されること', () => {
+    expect(icon.value).toMatch(newIcon)
+  })
+  test('toggleDisplayOfIconSelectionModalがコールされていること', () => {
+    expect(toggleDisplayOfIconSelectionModalMock).toHaveBeenCalledTimes(1)
+  })
 })
