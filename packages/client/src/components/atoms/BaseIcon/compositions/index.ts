@@ -35,7 +35,13 @@ type ChangeIcon = (
   toggleDisplayOfIconSelectionModal: ReturnType<ToggleDisplayOfIconSelectionModal>
 ) => (newIcon: string) => void
 
-export const changeIcon: ChangeIcon = (icon) => (newIcon) => {}
+export const changeIcon: ChangeIcon = (
+  icon,
+  toggleDisplayOfIconSelectionModal
+) => (newIcon) => {
+  icon.value = newIcon
+  toggleDisplayOfIconSelectionModal()
+}
 
 type UseIcon = (
   isShownIconSelectionModal: IsShownIconSelectionModal,
