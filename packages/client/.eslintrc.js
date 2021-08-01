@@ -30,8 +30,26 @@ module.exports = {
         'vue/comment-directive': 'off',
       },
     },
+    {
+      files: ['*.mdx'],
+      extends: [
+        'eslint:recommended',
+        'plugin:mdx/recommended',
+        'plugin:prettier/recommended',
+      ],
+      rules: {
+        'prettier/prettier': [
+          'error',
+          {
+            singleQuote: true,
+            semi: false,
+            tabWidth: 2,
+            trailingComma: 'es5',
+          },
+        ],
+      },
+    },
   ],
-  ignorePatterns: ['*.mdx'],
   rules: {
     'prettier/prettier': [
       'error',
