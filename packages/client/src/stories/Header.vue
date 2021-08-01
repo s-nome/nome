@@ -51,20 +51,22 @@
 </template>
 
 <script>
+import { defineComponent, PropType } from 'vue'
 import './header.css'
 import MyButton from './Button.vue'
 
-export default {
+export default defineComponent({
   name: 'my-header',
 
   components: { MyButton },
 
   props: {
     user: {
-      type: Object,
+      type: Object as PropType<object>,
+      required: true,
     },
   },
 
   emits: ['login', 'logout', 'createAccount'],
-}
+})
 </script>

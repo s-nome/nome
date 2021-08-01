@@ -5,4 +5,7 @@ module.exports = {
   "packages/client/**/*.{vue,scss}": [
     "npx --workspace=client stylelint",
   ],
+  // "packages/client/**/*.vue": [
+  //   "npx --workspace=client vti diagnostics",
+  // ],
 };
