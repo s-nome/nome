@@ -5,10 +5,10 @@
 </template>
 
 <script>
+import { defineComponent, reactive, computed } from 'vue'
 import './button.css'
-import { reactive, computed } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'my-button',
 
   props: {
@@ -28,6 +28,7 @@ export default {
     },
     backgroundColor: {
       type: String,
+      default: '',
     },
   },
 
@@ -50,5 +51,5 @@ export default {
       },
     }
   },
-}
+})
 </script>

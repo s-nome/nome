@@ -17,14 +17,14 @@ export default defineComponent({
      */
     size: {
       type: String as PropType<Size>,
-      default: 'medium' as const,
+      default: 'medium',
     },
     /**
      * テキストのcolor
      */
     color: {
       type: String as PropType<Color>,
-      default: 'default' as const,
+      default: 'default',
     },
     /**
      * テキストのfont-weight

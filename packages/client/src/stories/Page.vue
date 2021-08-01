@@ -75,21 +75,23 @@
   </article>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
 import './page.css'
 import MyHeader from './Header.vue'
 
-export default {
+export default defineComponent({
   name: 'my-page',
 
   components: { MyHeader },
 
   props: {
     user: {
-      type: Object,
+      type: Object as PropType<object>,
+      required: true,
     },
   },
 
   emits: ['login', 'logout', 'createAccount'],
-}
+})
 </script>
