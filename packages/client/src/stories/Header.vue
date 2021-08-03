@@ -50,7 +50,7 @@
   </header>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import './header.css'
 import MyButton from './Button.vue'

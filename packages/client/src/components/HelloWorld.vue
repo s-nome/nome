@@ -1,18 +1,25 @@
 <template>
   <div class="helloworld">
     <h1>{{ msg }}</h1>
-    <base-text size="large" color="light">res: {{ serverResponse }}</base-text>
+    <div style="display: flex">
+      <base-icon />
+      <base-text size="large" color="light">
+        res: {{ serverResponse }}
+      </base-text>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
 import BaseText from '@/components/atoms/BaseText/index.vue'
+import BaseIcon from '@/components/atoms/BaseIcon/index.vue'
 
 export default defineComponent({
   name: 'HelloWorld',
   components: {
     BaseText,
+    BaseIcon,
   },
   props: {
     msg: String,
