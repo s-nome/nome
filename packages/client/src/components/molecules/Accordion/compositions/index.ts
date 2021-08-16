@@ -4,14 +4,11 @@ import { ref, Ref } from 'vue'
 // - アコーディオンの開閉状態
 // - アコーディオンの名前
 // - アコーディオンのアイコン
-type AccordionItem = {
+type Accordion = {
   isOpen: Ref<boolean>
   name: Ref<string>
   icon: Ref<string>
-}
-
-type Accordion = AccordionItem & {
-  children?: AccordionItem[]
+  children?: Accordion[]
 }
 
 const accordion: Accordion = {
@@ -43,9 +40,13 @@ type ToggleAccordion = (accordion: Accordion) => () => void
 type ChangeAccordionName = (accordion: Accordion) => (name: string) => void
 
 // - アコーディオンのアイコンを変更する関数
-type ChangeAccordionIcon = (accordion: Accordion) => (name: string) => void
+type ChangeAccordionIcon = (accordion: Accordion) => (icon: string) => void
 
 // - アコーディオンの子を追加する関数
+type addAccordionChild = (
+  accordion: Accordion
+) => (accordionChild: Accordion) => void
+
 // - アコーディオンの削除をemitする関数
 // - アコーディオンの複製をemitする関数
 
