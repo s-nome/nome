@@ -7,4 +7,9 @@ module.exports = {
   testMatch: [
     '<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/*.test.(js|jsx|ts|tsx))',
   ],
+  globals: {
+    'ts-jest': {
+      diagnostics: false,
+    },
+  },
 }
