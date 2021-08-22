@@ -1,0 +1,49 @@
+name: ESLint
+on:
+  push:
+    paths:
+      - 'packages/client/**.tsx?'
+      - 'packages/client/**.jsx?'
+      - 'packages/client/**.vue'
+      - .github/workflows/client-eslint.yml
+
+jobs:
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - run: npm install -g npm@7
+      - run: npm ci
+      - run: npx --workspace=client vue-cli-service lint
+
+      - name: Has auto fixed
+        id: diff
+        run: |
+          if (git diff --shortstat | grep '[0-9]'); then echo "::set-output name=fixed::yes"; fi
+      - name: Set up Git account information
+        if: steps.diff.outputs.fixed == 'yes'
+        run: |
+          git remote set-url origin https://github-actions:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
+          git config --global user.name $GITHUB_ACTOR
+          git config --global user.email $GITHUB_ACTOR@users.noreply.github.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push the diff
+        if: steps.diff.outputs.fixed == 'yes'
+        run: |
+          git add .;
+          git commit -m "Fixed auto-fixable ESLint errors by github-actions" -n;
+          git push origin HEAD:${GITHUB_REF}
